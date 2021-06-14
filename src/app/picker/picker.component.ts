@@ -12,8 +12,8 @@ export class PickerComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  changeColor(value) {
-    console.log('test');
+  changeColor() {
+    console.log();
   }
 
 }

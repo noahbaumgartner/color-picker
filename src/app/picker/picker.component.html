@@ -1,9 +1,32 @@
-<div class="subpage">
+<div class="subpage" [ngStyle]="{'background-color': hexCode}" >
     <div class="slide-container">
-        <input #red (input)="changeColor()" type="range" min="0" max="255" class="slider">
-        <input type="range" min="0" max="255" class="slider">
-        <input type="range" min="0" max="255" class="slider">
+        <input 
+            (input)="changeColor(inp_red.value, inp_green.value, inp_blue.value)" 
+            type="range" min="0" max="255" 
+            class="slider" 
+            value="{{ red }}"
+            [ngClass]="sliderColorClass"
+            #inp_red>
+        <input 
+            (input)="changeColor(inp_red.value, inp_green.value, inp_blue.value)" 
+            type="range" min="0" max="255" 
+            class="slider" 
+            value="{{ green }}" 
+            [ngClass]="sliderColorClass"
+            #inp_green>
+        <input 
+            (input)="changeColor(inp_red.value, inp_green.value, inp_blue.value)" 
+            type="range" min="0" max="255" 
+            class="slider" 
+            value="{{ blue }}" 
+            [ngClass]="sliderColorClass"
+            #inp_blue>
     </div>
 
-    <input type="text" id="hex-input" value="#000000">
+    <span 
+        id="hex-input"
+        value="#000000"
+        [ngClass]="sliderColorClass">
+        {{ hexCode }}
+    </span>
 </div>

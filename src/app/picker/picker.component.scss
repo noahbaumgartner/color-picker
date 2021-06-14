@@ -3,7 +3,9 @@ $slider-width: 250px;
 $space-between: 25px;
 
 .subpage{
-
+    position: absolute;
+    width: 100%;
+    height: 100vh;
 }
 
 .slide-container {
@@ -22,18 +24,12 @@ $space-between: 25px;
         -webkit-appearance: none;
         appearance: none;
         height: $slider-height;
-        background: #d3d3d3;
+        background-color: rgba($color: #000, $alpha: 0.3);
         outline: none;
-        opacity: 0.7;
-        -webkit-transition: .2s;
-        transition: opacity .2s;
+        transition: 0.3s;
 
         margin-bottom: $space-between;
         border-radius: $slider-height;
-    }
-  
-    .slider:hover {
-        opacity: 1;
     }
   
     .slider::-webkit-slider-thumb {
@@ -41,7 +37,6 @@ $space-between: 25px;
         appearance: none;
         width: $slider-height;
         height: $slider-height;
-        background: #1b1b1b; 
         cursor: pointer;
         border-radius: $slider-height;
     }
@@ -49,23 +44,55 @@ $space-between: 25px;
     .slider::-moz-range-thumb {
         width: $slider-height;
         height: $slider-height; 
-        background: #1b1b1b; 
         cursor: pointer;
+    }
+
+    .slider_white {
+        background-color: rgba($color: #fff, $alpha: 0.3);
+    }
+
+    .slider_white::-webkit-slider-thumb {
+        background: #fff;
+    }
+    
+    .slider_white::-moz-range-thumb {
+        background: #fff; 
+    }
+
+    .slider_black {
+        background-color: rgba($color: #000, $alpha: 0.3);
+    }
+
+    .slider_black::-webkit-slider-thumb {
+        background: #000; 
+    }
+
+    .slider_white::-moz-range-thumb {
+        background: #000; 
     }
 }
 
 #hex-input {
     position: absolute;
     width: 200px;
-    left: 17px;
+    left: 20px;
     bottom: 10px;
     padding: 0;
     font-size: 40px;
-    font-weight: bolder;
-    border: 0;
     font-family: 'Overpass', sans-serif;
+    background-color: transparent;
+
+    transition: 0.3s;
 }
 
 #hex-input:focus {
     outline: none;
+}
+
+.slider_black {
+    color: #000;
+}
+
+.slider_white {
+    color: #fff;
 }
